@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hunt the Wumpus</title>
+<link rel="stylesheet" href="wumpus.css" />
+<script type="text/javascript" src="htgame.js"></script>
+
+</head>
+<body>
+<h1>Hunt the Wumpus</h1>
+<p>Arrows remaining: <span id="arrowsLeft">5</span></p>
+<div id="gameBoard" > Hunt the Wumpus should load in this space. </div>
+<form id="movementControls" onsubmit="return false;">
+  <p>Move</p>
+  <table>
+    <tr>
+      <td rowspan="3"><input type="image" src="images/left.png" width="20" height="20" title="left" value="&lt;-" onclick="move('left')" /></td>
+      <td><input type="image" src="images/up.png" width="20" height="20" title="up" value="^"  onclick="move('up')" /></td>
+      <td rowspan="3"><input type="image" src="images/right.png" width="20" height="20" value="-&gt;"  onclick="move('right')" /></td>
+    </tr>
+    <tr>
+      <td></td>
+    </tr>
+    <tr>
+      <td><input type="image" src="images/down.png" width="20" height="20" value="v"  onclick="move('down')" /></td>
+    </tr>
+  </table>
+</form>
+<form id="arrowControls" onsubmit="return false;">
+  <p>Shoot</p>
+  <table>
+    <tr>
+      <td rowspan="3"><input type="image" src="images/left.png" width="20" height="20" title="left" value="&lt;-" onclick="shoot('left')" /></td>
+      <td><input type="image" src="images/up.png" width="20" height="20" title="up" value="^"  onclick="shoot('up')" /></td>
+      <td rowspan="3"><input type="image" src="images/right.png" width="20" height="20" title="right" value="-&gt;"   onclick="shoot('right')" /></td>
+    </tr>
+    <tr>
+      <td></td>
+    </tr>
+    <tr>
+      <td><input type="image" src="images/down.png" width="20" height="20" title="down" value="v"   onclick="shoot('down')" /></td>
+    </tr>
+  </table>
+</form>
+<h2>Rules for playing Hunt the Wumpus:</h2>
+
+<ol>
+  <li>There are 3 hazards:
+    <ol>
+      <li>A bottomless pit (you will feel a breeze nearby).</li>
+      <li>A colony of bats that will pick you up and drop you in a random space--including potentially deadly spaces (you will hear flapping nearby).</li>
+      <li>A fearsome, hungry, and unbathed wumpus (you will smell it nearby).</li>
+    </ol>
+  </li>
+  <li>The wumpus is heavy; bats cannot lift him.</li>
+  <li>The wumpus is covered in suckers; he won't fall down the bottomless pit.</li>
+  <li>Firing an arrow that misses the wumpus may cause it to move.</li>
+  <li>You have 5 wumpus-piercing arrows.</li>
+  <li>You may find an arrow dropped by a previous hunter.</li>
+</ol>
+
+<script type="text/javascript">
+	var game = new Game;
+	game.init();
+</script>
+
+</body>
+</html>
